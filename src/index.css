@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --very-dark-gray: hsl(0, 0%, 17%);
+  --dark-gray: hsl(0, 0%, 59%);
+  --text-color: hsl(0, 0%, 100%);
+  --text-input: 18px;
+  --f-weight-1: 500;
+  --f-weight-2: 700;
+  --bg: url("./images/patternMobile.png");
+  --line-bg: hsla(0, 0%, 59%, 0.5);
+}
+
+@media (min-width: 376px) {
+  :root {
+    --bg: url("./images/patternDesktop.png");
+  }
+}
+
+* {
+  font-family: Rubik;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  height: 42vh;
+  width: 100%;
+  justify-content: center;
+  background-image: var(--bg);
+}
+
+.search-input-form {
+  margin-top: 1.5rem;
+  color: var(--text-color);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-input-form h2 {
+  font-weight: var(--f-weight-1);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.search-input-field {
+  width: 85%;
+  margin-top: 1rem;
+  display: flex;
+  max-width: 500px;
+}
+
+.search-input-field input {
+  width: 100%;
+  margin: 0;
+  height: 2.5rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem 0 0 0.5rem;
+  outline: none;
+}
+
+.search-input-field button {
+  border: none;
+  width: 3rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  background-color: var(--very-dark-gray);
+  cursor: pointer;
+  outline: none;
+}
+
+.map-container {
+  height: 58vh;
+  width: 100%;
+}
+
+.error-msg {
+  color: red;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.error-msg::before {
+  content: "*";
+}
+
+.data-container {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+}
+
+.actual-data-container {
+  background-color: #fff;
+  padding: 1.5rem 3rem 1rem;
+  min-width: auto;
+  max-width: 80%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.data {
+  margin-bottom: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.data h3 {
+  text-transform: uppercase;
+  color: var(--dark-gray);
+  font-size: 0.5rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.data p {
+  color: var(--very-dark-gray);
+  margin: 0.3rem 0 0;
+  font-weight: var(--f-weight-1);
+  font-size: 1.1rem;
+}
+
+.line {
+  display: none;
+  width: 1.5px;
+  background-color: var(--line-bg);
+  margin: 0 0.5rem;
+}
+
+@media (min-width: 576px) {
+  .data-container {
+    top: 34%;
+  }
+  .line {
+    display: block;
+  }
+  .data{
+    text-align: left;
+    margin-right: 1rem;
+  }
+  .data p{
+    font-size: 0.93rem;
+  }
+  .actual-data-container {
+    flex-direction: row;
+    padding: 2rem 3rem 1.5rem;
+  }
+}
